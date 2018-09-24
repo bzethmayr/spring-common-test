@@ -12,6 +12,10 @@ import static org.hamcrest.Matchers.sameInstance;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 
+/**
+ * Base class for tests for enum mappers.
+ * @param <T> The mapper type
+ */
 public abstract class EnumRowMapperBaseTest<T extends EnumRowMapper> {
 
     @Rule

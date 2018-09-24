@@ -3,16 +3,16 @@ package net.zethmayr.benjamin.spring.common.repository.test;
 import net.zethmayr.benjamin.spring.common.mapper.base.ClassFieldMapper;
 import net.zethmayr.benjamin.spring.common.repository.base.MapperRepository;
 import net.zethmayr.benjamin.spring.common.repository.base.Repository;
-import net.zethmayr.benjamin.spring.common.repository.base.EnumRepository;
 
 import java.util.stream.Collectors;
 
-import static org.hamcrest.Matchers.isEmptyOrNullString;
-import static org.hamcrest.Matchers.not;
 import static org.hamcrest.text.StringContainsInOrder.stringContainsInOrder;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
 
+/**
+ * Common assertions used when testing {@link Repository} implementations.
+ */
 public final class RepositoryAssertions {
     private RepositoryAssertions() {}
 

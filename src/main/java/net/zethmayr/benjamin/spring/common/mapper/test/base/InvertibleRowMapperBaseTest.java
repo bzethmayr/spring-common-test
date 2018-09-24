@@ -17,6 +17,11 @@ import static org.hamcrest.Matchers.sameInstance;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 
+/**
+ * Base class for tests for pojo mappers.
+ * @param <T> The mapper type under test
+ * @param <C> The pojo type
+ */
 public abstract class InvertibleRowMapperBaseTest<T extends InvertibleRowMapper<C>, C> extends RowMapperBaseTest<T, C> {
 
     protected InvertibleRowMapperBaseTest(final T underTest) {

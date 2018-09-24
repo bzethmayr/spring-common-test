@@ -7,11 +7,15 @@ import org.junit.Test;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.instanceOf;
-import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertThat;
 
+/**
+ * Base class for any {@link InvertibleRowMapper} subclass test.
+ * @param <T> The mapper type
+ * @param <C> The row type
+ */
 public abstract class RowMapperBaseTest<T extends InvertibleRowMapper<C>, C> {
     protected final T underTest;
 
