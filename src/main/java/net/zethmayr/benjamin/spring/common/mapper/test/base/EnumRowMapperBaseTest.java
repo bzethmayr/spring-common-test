@@ -30,7 +30,7 @@ public abstract class EnumRowMapperBaseTest<T extends EnumRowMapper> {
     @Test
     public void cannotGetEmptyInstanceButYouCanUseTheEnum() {
         thrown.expect(UnsupportedOperationException.class);
-        underTest.empty();
+        underTest.empty().get();
     }
 
     @Test

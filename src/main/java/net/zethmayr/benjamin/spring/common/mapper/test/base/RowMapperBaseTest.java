@@ -2,6 +2,7 @@ package net.zethmayr.benjamin.spring.common.mapper.test.base;
 
 import net.zethmayr.benjamin.spring.common.mapper.base.ClassFieldMapper;
 import net.zethmayr.benjamin.spring.common.mapper.base.InvertibleRowMapper;
+import net.zethmayr.benjamin.spring.common.mapper.base.InvertibleRowMapperBase;
 import net.zethmayr.benjamin.spring.common.mapper.base.Mapper;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ import static org.junit.Assert.assertThat;
  * @param <T> The mapper type
  * @param <C> The row type
  */
-public abstract class RowMapperBaseTest<T extends InvertibleRowMapper<C>, C> {
+public abstract class RowMapperBaseTest<T extends InvertibleRowMapperBase<C>, C> {
     protected final T underTest;
 
     protected RowMapperBaseTest(final T underTest) {

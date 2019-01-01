@@ -2,6 +2,7 @@ package net.zethmayr.benjamin.spring.common.mapper.test.base;
 
 import net.zethmayr.benjamin.spring.common.mapper.base.ClassFieldMapper;
 import net.zethmayr.benjamin.spring.common.mapper.base.InvertibleRowMapper;
+import net.zethmayr.benjamin.spring.common.mapper.base.InvertibleRowMapperBase;
 import org.junit.Test;
 
 import java.sql.ResultSet;
@@ -22,7 +23,7 @@ import static org.mockito.Mockito.mock;
  * @param <T> The mapper type under test
  * @param <C> The pojo type
  */
-public abstract class InvertibleRowMapperBaseTest<T extends InvertibleRowMapper<C>, C> extends RowMapperBaseTest<T, C> {
+public abstract class InvertibleRowMapperBaseTest<T extends InvertibleRowMapperBase<C>, C> extends RowMapperBaseTest<T, C> {
 
     protected InvertibleRowMapperBaseTest(final T underTest) {
         super(underTest);
@@ -54,8 +55,8 @@ public abstract class InvertibleRowMapperBaseTest<T extends InvertibleRowMapper<
 
     public static void assertEmptyReturnsSomething(final InvertibleRowMapper underTest) {
         final Object first;
-        assertThat(first = underTest.empty(), is(not(nullValue())));
+        assertThat(first = underTest.empty().get(), is(not(nullValue())));
         assertThat(first, is(instanceOf(underTest.rowClass())));
-        assertThat(underTest.empty(), allOf(is(not(nullValue())), not(sameInstance(first))));
+        assertThat(underTest.empty().get(), allOf(is(not(nullValue())), not(sameInstance(first))));
     }
 }
