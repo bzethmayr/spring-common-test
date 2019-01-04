@@ -38,11 +38,10 @@ public abstract class EnumRowMapperBaseTest<T extends EnumRowMapper> {
 
     @Test
     @SuppressWarnings("unchecked") // because a CCE would fail the test...
-    public void canMapFromRs() throws Exception {
+    public void canMapFromRs() {
         final Object expected = underTest.idMapper().des(0);
         final ResultSet mockRs = mock(ResultSet.class);
         final Object mapped = underTest.mapRow(mockRs, 99);
         assertThat(mapped, is(sameInstance(expected)));
     }
-
 }

@@ -1,0 +1,1 @@
+package net.zethmayr.benjamin.spring.common.controller.test;
